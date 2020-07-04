@@ -66,7 +66,7 @@ void Pmap()  //맵 프린트
     fscanf(fp, "%d", &Mscore);
     fclose(fp);
     
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { 50, 23 });
+    setXY(50,23);
     printf("  max score : %d", Mscore);
 }
  
@@ -121,7 +121,7 @@ void star() // 맵에 별을 찍는 함수
  
 void reprint(short x, short y, int n) //맵프린팅(커서단위)
 {
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { x, y });
+    setXY(x,y);
  
     if (n == 0)
         printf("  ");
@@ -151,7 +151,7 @@ void InMscore()//최고점수 저장
  
 void gameover()
 {
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { 20, 12 });
+    setXY(20,12);
     printf("GAME OVER");
 }
  
@@ -226,7 +226,7 @@ int main(void)
         }
         gameover();
         
-        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { 0, 25 });
+        setXY(0,25);
         
         printf("다시하려면 0, 나가려면 1을 입력하십시오 :");
         scanf("%d", &regame);
